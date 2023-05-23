@@ -1,0 +1,19 @@
+<div class="container">
+  <div class="row no-gutters">
+    <div class="col-md-5 col-sm-10 mx-2 mx-sm-auto shadow-lg rounded px-0 my-5">
+      <h5 class="text-dark bg-light p-4 mb-0">careers</h5>
+      <div class="form-body p-4">
+
+        <%= form_with model: @career, url: career_index_path do |f| %>
+          <%= f.date_field :day %>
+          <div class="input-group mb-3 mt-4">
+            <%= f.text_field :description %>
+          </div>
+          <%= f.submit 'career_register', class:"btn btn-lg btn-block btn-info mt-4" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+
+<%= render 'list', careers: @careers %>

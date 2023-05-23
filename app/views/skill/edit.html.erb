@@ -1,0 +1,17 @@
+<div class = "container">
+  <div class = "row">
+    <div class = "col-sm-12 col-md-8 col-lg-5 mx-auto">
+      <h1>Editing Skill</h1>
+      <%= form_with model: @skill do |f| %>
+        <p>Skill</p>
+        <%= f.text_field :skill %>
+        <p>Achieve</p>
+        <%= f.number_field :achieve %>
+        <br /><%= f.submit 'Update Skill', class:"btn btn-lg btn-secondary"%>
+      <% end %>
+      <div>
+        <%= link_to "Back", skill_index_path %>
+      </div>
+    </div>
+  </div>
+</div>

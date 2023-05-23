@@ -1,0 +1,67 @@
+<!-- app/views/posts/index.html.erb -->
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-1 bg-primary">
+      
+    </div>
+    <div class="work_top col-11 bg-warning">
+      <h1 class="name">HINA ISHIKAWA</h1>
+      <div class="image1">
+        <%= image_tag src="/assets/1.jpg" %>
+      </div>
+      <div class="personal_data bg-primary">
+        <div class="intro_box">
+          <p class="intro">Thank you for coming my site!</p>
+          <p class="intro">I'm majoring in Computer Science</p>
+          <p class="intro"> in tokyo institute of technology Univ.</p>
+          <p class="intro">I'm researching image sensing in Watanabe-Lab.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-1 bg-warning">
+    </div>
+    <div class="col-11 bg-primary">
+      <h1 class="works_header">Works</h1>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="work_contents col-10 bg-success mx-auto">
+      <% @posts.each do |post| %>
+        <div class="work_card">
+          <p><%= post['title'] %></p>
+          <h2><%= post['url'] %></h2>
+        </div>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-3 bg-success skills">
+      <h1 class="text-center">Skill</h1>
+      <% @skills.each do |skill| %>
+      <ul>
+        <li>
+          <%= skill.skill %>
+        </li>
+      </ul>
+    <% end %>
+    </div>
+  </div>
+  <div class="row">
+      <div class="card mx-auto shadow-lg bg-dark">
+        <h1 class="mx-auto">Career</h1>
+        <table class="table career mx-auto">
+          <tbody>
+            <% @careers.each do |career| %>
+              <tr>
+                <td><%= career.day %></td>
+                <td><%= career.description %></td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+</div>

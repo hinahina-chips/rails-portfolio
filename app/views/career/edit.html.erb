@@ -1,0 +1,18 @@
+<div class = "container">
+  <div class = "row">
+    <div class = "col-sm-12 col-md-8 col-lg-5 mx-auto">
+      <h1>Editing career</h1>
+      <%= form_with model: @career do |f| %>
+        <p>career</p>
+        <%= f.date_field :day %>
+        <p>Achieve</p>
+        <%= f.text_field :description %>
+        <br /><%= f.submit 'Update career', class:"btn btn-lg btn-secondary" %>
+      <% end %>
+      <div>
+        <%= link_to "Back", career_index_path %>
+      </div>
+    </div>
+  </div>
+</div>
+

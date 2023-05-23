@@ -1,0 +1,15 @@
+<div class="card-list-container py-5">
+  <% careers.each do |career| %>
+    <div class="card w-50 mx-auto mt-4 shadow-lg">
+      <div class="card-body">
+        <div class="row">
+          <div class="col-10">
+            <p class="card-text">career:<%= career.day %></p>
+            <span><i class="fas fa-user"></i><%= career.description %></span>
+            <%= button_to "Destroy", career_path(career), method: :delete %>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>

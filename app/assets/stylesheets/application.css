@@ -1,0 +1,96 @@
+html {
+    height: 100%;
+    margin: 0;
+    font-size: 100%;
+    width: 100%;
+  }
+
+main {
+    padding-top: 236px;
+}
+
+.container-fluid {
+    padding: 0px;
+}
+
+.work_top {
+    height: 1000px;
+}
+
+.work_card {
+    height: 300px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10%;
+    margin-bottom: 10%;
+}
+
+
+.skills {
+    margin-top: 500px;
+    margin-left: 10%
+}
+
+.work_contents {
+    margin-top: 100px;
+}
+
+.card {
+    width: 70%;
+    margin: 30%;
+}
+
+.career {
+    margin-top: 5%; 
+}
+
+.name {
+    font-size: 100px;
+}
+
+.image1 {
+    width: 70%;
+}
+
+
+.works_header {
+    font-size: 10rem;
+}
+
+.personal_data {
+    position: absolute;
+    bottom: 10%;
+    right: 10%;
+    height: 30%;
+    width: 30%; 
+}
+
+.intro_box {
+    margin-top: 100px;
+    text-align:center;
+}
+
+.intro {
+    font-size: 67%;
+}
+
+.navbar {
+    height: 100px;
+} 
+
+
+@media screen and (max-width:570px){
+    .name {
+        font-size: 30px;
+    }
+    .works_header {
+        font-size: 100px;
+    }
+}
+
+@media screen and (max-width:959px){
+    .personal_data {
+        width: 80%;
+        margin: 0 auto;
+    }
+}
