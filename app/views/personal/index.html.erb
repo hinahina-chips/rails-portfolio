@@ -1,67 +1,168 @@
-<!-- app/views/posts/index.html.erb -->
-<div class="container-fluid">
-  <div class="row">
-    <div class="col-1 bg-primary">
-      
-    </div>
-    <div class="work_top col-11 bg-warning">
-      <h1 class="name">HINA ISHIKAWA</h1>
-      <div class="image1">
-        <%= image_tag src="/assets/1.jpg" %>
-      </div>
-      <div class="personal_data bg-primary">
-        <div class="intro_box">
-          <p class="intro">Thank you for coming my site!</p>
-          <p class="intro">I'm majoring in Computer Science</p>
-          <p class="intro"> in tokyo institute of technology Univ.</p>
-          <p class="intro">I'm researching image sensing in Watanabe-Lab.</p>
-        </div>
-      </div>
-    </div>
+<!-- main-visual用のdiv -->
+<div class = "main-visual">
+  <div class = "main-visual-content">
+      <p class = "main-visual-text">
+          Thank you for coming my site!<br /> 
+          I'm majoring in Computer Science<br />
+          in tokyo institute of technology Univ.<br />
+          I'm researching image sensing in lab.
+      </p>
+      <p class = "main-visual-name">
+        My core is "raison d'être".
+      </p>
   </div>
-  <div class="row">
-    <div class="col-1 bg-warning">
-    </div>
-    <div class="col-11 bg-primary">
-      <h1 class="works_header">Works</h1>
-    </div>
+  <div class="main-visual-myname">
+    HINA ISHIKAWA
   </div>
-
-  <div class="row">
-    <div class="work_contents col-10 bg-success mx-auto">
-      <% @posts.each do |post| %>
-        <div class="work_card">
-          <p><%= post['title'] %></p>
-          <h2><%= post['url'] %></h2>
-        </div>
-      <% end %>
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="col-3 bg-success skills">
-      <h1 class="text-center">Skill</h1>
-      <% @skills.each do |skill| %>
-      <ul>
-        <li>
-          <%= skill.skill %>
-        </li>
-      </ul>
-    <% end %>
-    </div>
-  </div>
-  <div class="row">
-      <div class="card mx-auto shadow-lg bg-dark">
-        <h1 class="mx-auto">Career</h1>
-        <table class="table career mx-auto">
-          <tbody>
-            <% @careers.each do |career| %>
-              <tr>
-                <td><%= career.day %></td>
-                <td><%= career.description %></td>
-              </tr>
-            <% end %>
-          </tbody>
-        </table>
-      </div>
 </div>
+
+<div class="various-contents">
+  <section class = "blog">
+    <h2 class = "blog-heading">Recent Works</h2>
+
+    <div class = "blog-box">
+        <!-- blog-item1--------->
+        <% @posts.each do |post| %>
+        <div class = "blog-item">
+            <!-- 画像の埋め込み-->
+            <img class = "blog-image" src = "assets/forest.jpg">
+            <!-- text部分 -->
+            <section class = "blog-text">
+                <h3>
+                    <a href = "<%= post['url'] %>">
+                    <%= post['title'] %>
+                    </a>
+                </h3>
+                <% post['tags'].first(2).each do |tag| %>
+                  <span class = "category"><%= tag['name'] %></span><!-- divと同じだが、インライン要素である-->
+                <% end %>
+                </section>
+            <!---------------------->
+        </div>
+        <% end %>
+
+        <!-- blog-item2--------->
+        <div class = "blog-item">
+            <!-- 画像の埋め込み-->
+            <img class = "blog-image" src = "assets/desert.jpg">
+            <!-- text部分 -->
+            <section class = "blog-text">
+                <h3>
+                    <a href = "single.html"><!-- リンク部分-->
+                        How to fight<br>
+                        desertification and<br>
+                        reverse climate change
+                    </a>
+                </h3>
+                <p class = "blog-date">June 17, 2017</p>
+                <span class = "category">Nature</span><!-- divと同じだが、インライン要素である-->
+            </section><!-- section要素は、hタグが必要（らしい）-->
+            <!---------------------->
+        </div>
+        <!-- -blog-item2-- -->
+
+        <!-- blog-item3--------->
+        <div class = "blog-item">
+            <!-- 画像の埋め込み-->
+            <img class = "blog-image" src = "assets/sunset.jpg">
+            <!-- text部分 -->
+            <section class = "blog-text">
+                <h3>
+                    <a href = "single.html"><!-- リンク部分-->
+                        Why I'm rowing<br>
+                        across the Pacific
+                    </a>
+                </h3>
+                <p class = "blog-date">June 16, 2017</p>
+                <span class = "category">Adventure</span><!-- divと同じだが、インライン要素である-->
+            </section><!-- section要素は、hタグが必要（らしい）-->
+            <!---------------------->
+        </div>
+        <!-- -blog-item3-- -->
+
+        <!-- blog-item4--------->
+        <div class = "blog-item">
+            <!-- 画像の埋め込み-->
+            <img class = "blog-image" src = "assets/italy.jpg">
+            <!-- text部分 -->
+            <section class = "blog-text">
+                <h3>
+                    <a href = "single.html"><!-- リンク部分-->
+                        Unseen footage,<br>
+                        untamed nature
+                    </a>
+                </h3>
+                <p class = "blog-date">June 15, 2017</p>
+                <span class = "category">Nature</span><!-- divと同じだが、インライン要素である-->
+            </section><!-- section要素は、hタグが必要（らしい）-->
+            <!---------------------->
+        </div>
+        <!-- -blog-item4-- -->
+
+        <!-- blog-item5--------->
+        <div class = "blog-item">
+            <!-- 画像の埋め込み-->
+            <img class = "blog-image" src = "assets/asia.jpg">
+            <!-- text部分 -->
+            <section class = "blog-text">
+                <h3>
+                    <a href = "single.html"><!-- リンク部分-->
+                        The case for<br>
+                        engineering our food
+                    </a>
+                </h3>
+                <p class = "blog-date">June 14, 2017</p>
+                <span class = "category">Culture</span><!-- divと同じだが、インライン要素である-->
+            </section><!-- section要素は、hタグが必要（らしい）-->
+            <!---------------------->
+        </div>
+        <!-- -blog-item5-- -->
+
+        
+    </div>
+    <div class = "pagination">
+        <p><<</p>
+        <p><</p>
+        <p>1</p>
+        <p>2</p>
+        <p>3</p>
+        <p>></p>
+        <p>>></p>
+    </div>
+</section>
+<div class = "sidebar">
+    <section class = "popular">
+        <h2 class = "popular-heading common-heading">Skill</h2>
+        <div class = "sidebar-contents">
+          <% @skills.each do |skill| %>
+            <p class = "popular-text"><%= skill.skill %></p>
+          <% end %>
+        </div>
+    </section>
+    <section class = "instagram">
+        <h2 class = "instagram-heading common-heading">Projects</h2>
+        <div class = "sidebar-contents">
+            <a href="#"><div class = "instagram-box"></div></a>
+            <div class = "instagram-box"></div>
+            <div class = "instagram-box"></div>
+            <div class = "instagram-box"></div>
+            <div class = "instagram-box"></div>
+            <div class = "instagram-box"></div>
+        </div>
+    </section>
+</div>
+
+</div>
+<section class = "careers">
+<h2 class = "categories-heading common-heading">Career</h2>
+  <table class="table mx-auto table-borderless">
+    <tbody>
+      <% @careers.each do |career| %>
+        <tr>
+          <td><%= career.day.strftime('%Y %m/%d') %></td>
+          <td><%= career.description %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</section>
