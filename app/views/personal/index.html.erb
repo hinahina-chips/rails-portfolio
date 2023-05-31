@@ -18,7 +18,7 @@
 
 <div class="various-contents">
   <section class = "blog">
-    <h2 class = "blog-heading">Recent Works</h2>
+    <h2 class = "blog-heading", id="works">Recent Works</h2>
 
     <div class = "blog-box">
         <!-- blog-item1--------->
@@ -33,7 +33,7 @@
                     <%= post['title'] %>
                     </a>
                 </h3>
-                <% post['tags'].first(2).each do |tag| %>
+                <% post['tags'].each do |tag| %>
                   <span class = "category"><%= tag['name'] %></span><!-- divと同じだが、インライン要素である-->
                 <% end %>
                 </section>
@@ -132,7 +132,7 @@
 </section>
 <div class = "sidebar">
     <section class = "popular">
-        <h2 class = "popular-heading common-heading">Skill</h2>
+        <h2 class = "popular-heading common-heading", id="skills">Skill</h2>
         <div class = "sidebar-contents">
           <% @skills.each do |skill| %>
             <p class = "popular-text"><%= skill.skill %></p>
@@ -153,7 +153,7 @@
 </div>
 
 </div>
-<section class = "careers">
+<section class = "careers", id="careers">
 <h2 class = "categories-heading common-heading">Career</h2>
   <table class="table mx-auto table-borderless">
     <tbody>

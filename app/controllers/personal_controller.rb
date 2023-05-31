@@ -4,7 +4,8 @@ class PersonalController < ApplicationController
 
   def index
     qiita_client = QiitaClient.new('4616d863de05ab1d646b9f2e4c5c39ebf5617695')
-    @posts = qiita_client.get_my_posts
+    my_posts = qiita_client.get_my_posts
+    @posts = my_posts
     @skills = Skill.all
     @careers = Career.all
   end
