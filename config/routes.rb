@@ -7,5 +7,7 @@ Rails.application.routes.draw do
   resources :skill, only: [:new, :create, :edit, :update, :index, :destroy]
   resources :personal, only: [:new, :create, :index, :show, :destroy]
   resources :todos
-
+  get 'projects/logo' => 'projects#logo', as: 'logo'
+  get 'projects/round' => 'projects#round', as: 'round'
+  get 'projects/pictures' => 'projects#pictures', as: 'pictures'
 end

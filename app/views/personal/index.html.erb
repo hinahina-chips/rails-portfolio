@@ -25,100 +25,21 @@
         <% @posts.each do |post| %>
         <div class = "blog-item">
             <!-- 画像の埋め込み-->
-            <img class = "blog-image" src = "assets/forest.jpg">
+            <img class = "blog-image shadow" src = "assets/1_works.jpg">
             <!-- text部分 -->
             <section class = "blog-text">
                 <h3>
-                    <a href = "<%= post['url'] %>">
+                    <a href = "<%= post['url'] %>" class="text-body">
                     <%= post['title'] %>
                     </a>
                 </h3>
                 <% post['tags'].each do |tag| %>
                   <span class = "category"><%= tag['name'] %></span><!-- divと同じだが、インライン要素である-->
                 <% end %>
-                </section>
+            </section>
             <!---------------------->
         </div>
-        <% end %>
-
-        <!-- blog-item2--------->
-        <div class = "blog-item">
-            <!-- 画像の埋め込み-->
-            <img class = "blog-image" src = "assets/desert.jpg">
-            <!-- text部分 -->
-            <section class = "blog-text">
-                <h3>
-                    <a href = "single.html"><!-- リンク部分-->
-                        How to fight<br>
-                        desertification and<br>
-                        reverse climate change
-                    </a>
-                </h3>
-                <p class = "blog-date">June 17, 2017</p>
-                <span class = "category">Nature</span><!-- divと同じだが、インライン要素である-->
-            </section><!-- section要素は、hタグが必要（らしい）-->
-            <!---------------------->
-        </div>
-        <!-- -blog-item2-- -->
-
-        <!-- blog-item3--------->
-        <div class = "blog-item">
-            <!-- 画像の埋め込み-->
-            <img class = "blog-image" src = "assets/sunset.jpg">
-            <!-- text部分 -->
-            <section class = "blog-text">
-                <h3>
-                    <a href = "single.html"><!-- リンク部分-->
-                        Why I'm rowing<br>
-                        across the Pacific
-                    </a>
-                </h3>
-                <p class = "blog-date">June 16, 2017</p>
-                <span class = "category">Adventure</span><!-- divと同じだが、インライン要素である-->
-            </section><!-- section要素は、hタグが必要（らしい）-->
-            <!---------------------->
-        </div>
-        <!-- -blog-item3-- -->
-
-        <!-- blog-item4--------->
-        <div class = "blog-item">
-            <!-- 画像の埋め込み-->
-            <img class = "blog-image" src = "assets/italy.jpg">
-            <!-- text部分 -->
-            <section class = "blog-text">
-                <h3>
-                    <a href = "single.html"><!-- リンク部分-->
-                        Unseen footage,<br>
-                        untamed nature
-                    </a>
-                </h3>
-                <p class = "blog-date">June 15, 2017</p>
-                <span class = "category">Nature</span><!-- divと同じだが、インライン要素である-->
-            </section><!-- section要素は、hタグが必要（らしい）-->
-            <!---------------------->
-        </div>
-        <!-- -blog-item4-- -->
-
-        <!-- blog-item5--------->
-        <div class = "blog-item">
-            <!-- 画像の埋め込み-->
-            <img class = "blog-image" src = "assets/asia.jpg">
-            <!-- text部分 -->
-            <section class = "blog-text">
-                <h3>
-                    <a href = "single.html"><!-- リンク部分-->
-                        The case for<br>
-                        engineering our food
-                    </a>
-                </h3>
-                <p class = "blog-date">June 14, 2017</p>
-                <span class = "category">Culture</span><!-- divと同じだが、インライン要素である-->
-            </section><!-- section要素は、hタグが必要（らしい）-->
-            <!---------------------->
-        </div>
-        <!-- -blog-item5-- -->
-
-        
+        <% end %>      
     </div>
     <div class = "pagination">
         <p><<</p>
@@ -142,7 +63,7 @@
     <section class = "instagram">
         <h2 class = "instagram-heading common-heading">Projects</h2>
         <div class = "sidebar-contents">
-            <a href="#"><div class = "instagram-box"></div></a>
+            <a href="<%= pictures_path %>" class = "instagram-box"></a>
             <div class = "instagram-box"></div>
             <div class = "instagram-box"></div>
             <div class = "instagram-box"></div>
