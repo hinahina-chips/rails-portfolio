@@ -79,11 +79,4 @@ test:
 # Read https://guides.rubyonrails.org/configuring.html#configuring-a-database
 # for a full overview on how database connection configuration can be specified.
 #
-production:
-  <<: *default
-  host: rails-boilerplate-main.rails-boilerplate-main_default
-  database: postgres
-  username: postgres
-  password: <%= ENV["APP_DATABASE_PASSWORD"] %>
-  sslmode: verify-full
-  sslrootcert: prod-ca-2021.crt
+
