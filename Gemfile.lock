@@ -66,6 +66,7 @@ GEM
       i18n (>= 1.6, < 2)
       minitest (>= 5.1)
       tzinfo (~> 2.0)
+    bcrypt (3.1.18)
     bindex (0.8.1)
     bootsnap (1.16.0)
       msgpack (~> 1.2)
@@ -76,11 +77,18 @@ GEM
     debug (1.7.2)
       irb (>= 1.5.0)
       reline (>= 0.3.1)
+    devise (4.9.2)
+      bcrypt (~> 3.0)
+      orm_adapter (~> 0.1)
+      railties (>= 4.1.0)
+      responders
+      warden (~> 1.2.3)
     dotenv (2.8.1)
     dotenv-rails (2.8.1)
       dotenv (= 2.8.1)
       railties (>= 3.2)
     erubi (1.12.0)
+    ffi (1.15.5)
     globalid (1.1.0)
       activesupport (>= 5.0)
     httparty (0.21.0)
@@ -88,6 +96,9 @@ GEM
       multi_xml (>= 0.5.2)
     i18n (1.12.0)
       concurrent-ruby (~> 1.0)
+    image_processing (1.12.2)
+      mini_magick (>= 4.9.5, < 5)
+      ruby-vips (>= 2.0.17, < 3)
     importmap-rails (1.1.5)
       actionpack (>= 6.0.0)
       railties (>= 6.0.0)
@@ -108,6 +119,7 @@ GEM
       net-smtp
     marcel (1.0.2)
     method_source (1.0.0)
+    mini_magick (4.12.0)
     mini_mime (1.1.2)
     minitest (5.18.0)
     msgpack (1.7.0)
@@ -124,6 +136,7 @@ GEM
     nio4r (2.5.9)
     nokogiri (1.14.3-x86_64-linux)
       racc (~> 1.4)
+    orm_adapter (0.5.0)
     pg (1.4.6)
     puma (5.6.5)
       nio4r (~> 2.0)
@@ -152,6 +165,11 @@ GEM
       nokogiri (>= 1.6)
     rails-html-sanitizer (1.5.0)
       loofah (~> 2.19, >= 2.19.1)
+    rails_12factor (0.0.3)
+      rails_serve_static_assets
+      rails_stdout_logging
+    rails_serve_static_assets (0.0.5)
+    rails_stdout_logging (0.0.5)
     railties (7.0.4.3)
       actionpack (= 7.0.4.3)
       activesupport (= 7.0.4.3)
@@ -162,6 +180,11 @@ GEM
     rake (13.0.6)
     reline (0.3.3)
       io-console (~> 0.5)
+    responders (3.1.0)
+      actionpack (>= 5.2)
+      railties (>= 5.2)
+    ruby-vips (2.1.4)
+      ffi (~> 1.12)
     sprockets (4.2.0)
       concurrent-ruby (~> 1.0)
       rack (>= 2.2.4, < 4)
@@ -182,6 +205,8 @@ GEM
       railties (>= 6.0.0)
     tzinfo (2.0.6)
       concurrent-ruby (~> 1.0)
+    warden (1.2.9)
+      rack (>= 2.0.9)
     web-console (4.2.0)
       actionview (>= 6.0.0)
       activemodel (>= 6.0.0)
@@ -198,14 +223,18 @@ PLATFORMS
 DEPENDENCIES
   bootsnap
   debug
+  devise
   dotenv-rails
   httparty
+  image_processing (~> 1.2)
   importmap-rails
   jquery-rails
+  mini_magick
   pg (~> 1.1)
   puma (~> 5.0)
   rack-cors
   rails (~> 7.0.4, >= 7.0.4.3)
+  rails_12factor
   sprockets-rails
   stimulus-rails
   supabase (~> 0.1.0)

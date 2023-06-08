@@ -24,7 +24,11 @@
         <% @posts.each do |post| %>
         <div class = "blog-item">
             <!-- 画像の埋め込み-->
-            <img class = "blog-image shadow" src = "assets/1_works.jpg">
+            <% if post.image.attached? %>
+              <%= image_tag post.image %>
+            <% else %>
+              <%= image_tag post.default_image, class: 'blog-image shadow' %>
+            <% end %>
             <!-- text部分 -->
             <section class = "blog-text">
                 <h3>
@@ -32,14 +36,15 @@
                     <%= post['title'] %>
                     </a>
                 </h3>
-                <% post['tags'].each do |tag| %>
-                  <span class = "category"><%= tag['name'] %></span><!-- divと同じだが、インライン要素である-->
+                <% post['tags'].split(",").each do |tag| %>
+                  <span class = "category"><%= tag %></span><!-- divと同じだが、インライン要素である-->
                 <% end %>
             </section>
             <!---------------------->
         </div>
         <% end %>      
     </div>
+   
     <div class = "pagination">
         <p><<</p>
         <p><</p>
