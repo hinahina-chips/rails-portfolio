@@ -78,5 +78,13 @@ test:
 #
 # Read https://guides.rubyonrails.org/configuring.html#configuring-a-database
 # for a full overview on how database connection configuration can be specified.
-#
 
+production:
+  adapter: postgresql
+  encoding: unicode
+  database: postgres
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  username: postgres
+  password: <%= ENV["APP_DATABASE_PASSWORD"] %>
+  host: localhost
+  port: 3000
