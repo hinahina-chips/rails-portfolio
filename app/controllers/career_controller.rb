@@ -1,5 +1,5 @@
 class CareerController < ApplicationController
-  before_action :authenticate_user!, only: [:create, :index, :edit]
+  #before_action :authenticate_user!, only: [:create, :index, :edit]
   def create
     @career = Career.new(career_params)
     @career.save

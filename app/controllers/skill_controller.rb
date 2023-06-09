@@ -1,5 +1,5 @@
 class SkillController < ApplicationController
-  before_action :authenticate_user!, only: [:new, :index, :edit]
+  #before_action :authenticate_user!, only: [:new, :index, :edit]
   def create
     @skill = Skill.new(skill_params)
     @skill.save

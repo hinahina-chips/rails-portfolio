@@ -1,5 +1,5 @@
 class PersonalController < ApplicationController
-  before_action :authenticate_user!, only: [:new, :edit]
+  #before_action :authenticate_user!, only: [:new, :edit]
   # HTTPClientを呼び出す
   require 'qiita_client'
   def new
