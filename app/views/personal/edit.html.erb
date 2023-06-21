@@ -1,12 +1,9 @@
-<%= form_with(model: @qiita_item, url: personal_path(@qiita_item)) do |f| %>
+<%= form_with(model: @qiita_item, url: personal_path(@qiita_item), method: :patch, multipart: true) do |f| %>
   
-    <% if @qiita_item.image.attached? %>
-      <p>現在の画像:</p>
-      <%= image_tag @qiita_item.image %>
-      <p>新しい画像を選択:</p>
-    <% else %>
-      <p>画像をアップロード:</p>
-    <% end %>
+    <p>現在の画像:</p>
+    <p>新しい画像を選択:</p>
+  
+    <p>画像をアップロード:</p>
     <%= f.file_field :image %>
   
     <%= f.submit "更新" %>

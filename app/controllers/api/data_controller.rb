@@ -1,11 +1,19 @@
 class Api::DataController < ApplicationController
     def index
-      data = Skill.all
+      skill = Skill.all
+      career = Career.all
+      qiita = QiitaItem.all
+      #render json: { skill: skill, career: career, qiita: qiita }
+      data= {skill: skill, career: career, qiita: qiita}
       render json: data
     end
-  
+
     def show
-      data = Skill.find(params[:id])
+      skill = Skill.all
+      career = Career.all
+      qiita = QiitaItem.all
+      #render json: { skill: skill, career: career, qiita: qiita }
+      data= {skill: skill, career: career, qiita: qiita}
       render json: data
     end
   end

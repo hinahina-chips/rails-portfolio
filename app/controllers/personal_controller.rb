@@ -28,13 +28,20 @@ class PersonalController < ApplicationController
 
   def update
     @qiita_item = QiitaItem.find(params[:id])
-    @qiita_item.update(qiita_item_params)
-    redirect_to personal_index_path
+    if qiita_item_params[:image].present?
+      image = Image.new(qiita_item_params[:image])
+      if image.save
+        # 画像の保存に成功した場合は、画像を関連付ける
+        @qiita_item.image = image
+      else
+        puts image.errors.full_messages
+      end
+    end
   end
   
   private
 
   def qiita_item_params
-    params.require(:qiita_item).permit(:title, :url, :image)
+    params.require(:qiita_item).permit(:title, :url, :tags, :image)
   end
 end
