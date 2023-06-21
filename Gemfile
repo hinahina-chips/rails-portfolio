@@ -53,7 +53,7 @@ gem 'image_processing', '~> 1.2'
 # Use Sass to process CSS
 # gem 'bootstrap-sass'
 # gem "sassc-rails"
-gem 'devise'
+
 gem 'rails_12factor'
 gem "rack-cors"
 

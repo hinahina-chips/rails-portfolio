@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  devise_for :users
   namespace :api do
     resources :data, only: [:index, :show]
   end
