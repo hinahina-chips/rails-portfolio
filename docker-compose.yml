@@ -26,6 +26,7 @@ services:
       - ./data/db:/var/lib/postgresql/data
     environment:
       POSTGRES_PASSWORD: mysecretpassword
+      DATABASE_URL: postgres:
 
 volumes:
   database:
