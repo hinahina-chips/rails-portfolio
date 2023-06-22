@@ -26,7 +26,7 @@ services:
       - ./data/db:/var/lib/postgresql/data
     environment:
       POSTGRES_PASSWORD: mysecretpassword
-      DATABASE_URL: postgres:
+      DATABASE_URL: postgres://postgres:mysecretpassword@db:5432/myapp_development
 
 volumes:
   database:
