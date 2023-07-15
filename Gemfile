@@ -59,7 +59,7 @@ gem "rack-cors"
 
 
 group :production do
-  gem 'pg'
+  gem "pg", "~> 1.1"
 end
 
 group :development, :test do
