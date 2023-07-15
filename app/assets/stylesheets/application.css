@@ -327,6 +327,10 @@ footer{
     margin-top: 400px;
 }
 
+.pictures-content:nth-child(1){
+    background-image: url(uv2.jpg);
+}
+
 .pictures-head{
     margin-top: 300px;
 }
