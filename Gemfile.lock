@@ -216,7 +216,7 @@ DEPENDENCIES
   importmap-rails
   jquery-rails
   mini_magick
-  pg
+  pg (~> 1.1)
   puma (~> 5.0)
   rack-cors
   rails (~> 7.0.4, >= 7.0.4.3)
